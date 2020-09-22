@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Calculator</title>
+    <link
+      rel="shortcut icon"
+      href="./iconmonstr-calculator-5-240.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="place">
+      <div class="container">
+        <form class="work-area" autocomplete="off">
+          <input type="numbers" class="cal" id="txt" />
+          <div class="answer"></div>
+        </form>
+        <div class="signs">
+          <li class="clear"><button>AC</button></li>
+          <li class="rad"><button class="radd">RAD</button></li>
+          <li class="sin"><button>sin</button></li>
+          <li class="cos"><button>cos</button></li>
+          <li class="tan"><button>tan</button></li>
+          <li class="percentage"><button>%</button></li>
+          <li class="ln"><button>ln</button></li>
+          <li class="log"><button>log</button></li>
+          <li class="sqaure-root"><button>√</button></li>
+          <li class="exponential"><button class="ok">^</button></li>
+          <li class="pi"><button class="ok">π</button></li>
+          <li class="eulers"><button class="ok">e</button></li>
+          <li class="first-bracket"><button class="ok">(</button></li>
+          <li class="second-bracket"><button class="ok">)</button></li>
+          <li class="factorial"><button>!</button></li>
+        </div>
+        <div class="main">
+          <div class="numbers">
+            <li class="7"><button>7</button></li>
+            <li class="8"><button>8</button></li>
+            <li class="9"><button>9</button></li>
+            <li class="4"><button>4</button></li>
+            <li class="5"><button>5</button></li>
+            <li class="6"><button>6</button></li>
+            <li class="1"><button>1</button></li>
+            <li class="2"><button>2</button></li>
+            <li class="3"><button>3</button></li>
+            <li class="0"><button>0</button></li>
+            <li class="period"><button>.</button></li>
+            <li class="blank"></li>
+          </div>
+          <div class="operators">
+            <li class="divide"><button>/</button></li>
+            <li class="multiply"><button>*</button></li>
+            <li class="subtract"><button>-</button></li>
+            <li class="add"><button>+</button></li>
+          </div>
+          <div class="next">
+            <li class="backspace"><button>⌫</button></li>
+            <li class="blank"></li>
+            <li class="blank"></li>
+            <li class="equals"><button>=</button></li>
+          </div>
+        </div>
+        <div class="deg rad">DEG</div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
