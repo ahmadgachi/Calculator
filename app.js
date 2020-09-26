@@ -78,6 +78,7 @@ const calculate = function () {
       input.value = "";
     }
   }
+
   function lnE() {
     if (input.value != "") {
       answer.innerHTML = `${Math.log(eval(input.value))}`;
