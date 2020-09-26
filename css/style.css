@@ -1,16 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-li {
-  list-style: none;
-}
-
-.place {
+body {
   display: grid;
   place-items: center;
   place-content: center;
@@ -18,7 +13,7 @@ li {
   width: 100%;
 }
 
-.container {
+body .container {
   max-width: 350px;
   border-radius: 3px;
   max-height: 630px;
@@ -29,7 +24,7 @@ li {
   position: relative;
 }
 
-.deg {
+body .container .deg {
   position: absolute;
   top: 2%;
   left: 3%;
@@ -39,14 +34,14 @@ li {
   cursor: pointer;
 }
 
-.work-area {
+body .container .work-area {
   grid-row: 1/2;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.cal {
+body .container .work-area .cal {
   width: 100%;
   height: 70%;
   padding: 30px;
@@ -58,11 +53,11 @@ li {
   color: white;
 }
 
-.cal:focus {
+body .container .work-area .cal:focus {
   outline: none;
 }
 
-.answer {
+body .container .work-area .answer {
   width: 100%;
   height: 30%;
   padding: 5px;
@@ -72,14 +67,14 @@ li {
   color: white;
 }
 
-.signs {
+body .container .signs {
   grid-row: 2/3;
   display: flex;
   flex-wrap: wrap;
   background: #174ea6;
 }
 
-.signs li {
+body .container .signs li {
   width: 20%;
   display: flex;
   justify-content: center;
@@ -87,7 +82,11 @@ li {
   height: 60px;
 }
 
-.signs li button {
+body .container .signs li:first-child {
+  background-color: #da4b4b;
+}
+
+body .container .signs li button {
   background: transparent;
   color: white;
   border: none;
@@ -99,32 +98,29 @@ li {
   width: 100%;
 }
 
-.signs li button:focus,
-.operators li button,
-.numbers li button,
-.next li button {
+body .container .signs li button:focus {
   outline: none;
 }
 
-.main {
+body .container .main {
   grid-row: 3/4;
   display: grid;
   grid-template-columns: 2fr 0.5fr 0.5fr;
 }
 
-.numbers {
+body .container .main .numbers {
   display: flex;
   flex-wrap: wrap;
 }
 
-.numbers li {
+body .container .main .numbers li {
   width: 33.33%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.numbers li button {
+body .container .main .numbers li button {
   color: white;
   font-size: 25px;
   border: none;
@@ -135,56 +131,76 @@ li {
   cursor: pointer;
 }
 
-.blank {
+body .container .main .operators {
+  display: flex;
+  flex-direction: column;
+}
+
+body .container .main .operators li {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body .container .main .operators li button {
+  font-size: 25px;
+  color: #6f8fc2;
+  border: none;
+  border-radius: 100%;
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+body .container .main .next {
+  display: flex;
+  flex-direction: column;
+}
+
+body .container .main .next li {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body .container .main .next li:first-child button {
+  color: white;
+  background: #da4b4b;
+}
+
+body .container .main .next li button {
+  font-size: 25px;
+  color: #6f8fc2;
+  border: none;
+  border-radius: 100%;
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+body .container .signs li button,
+body .container .operators li button,
+body .container .numbers li button,
+body .container .next li button {
+  outline: none;
+}
+
+body .container .blank {
   pointer-events: none;
 }
 
-.operators {
-  display: flex;
-  flex-direction: column;
+body .org {
+  color: #da4b4b;
 }
 
-.operators li {
-  height: 25%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.operators li button {
-  font-size: 25px;
-  color: #6f8fc2;
-  border: none;
-  border-radius: 100%;
-  background: transparent;
-  height: 100%;
-  width: 100%;
-  cursor: pointer;
-}
-
-.next {
-  display: flex;
-  flex-direction: column;
-}
-
-.next li {
-  height: 25%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.next li button {
-  font-size: 25px;
-  color: #6f8fc2;
-  border: none;
-  border-radius: 100%;
-  background: transparent;
-  height: 100%;
-  width: 100%;
-  cursor: pointer;
+body .backspace {
+  background: #da4b4b;
 }
 
 .animate-pop {
@@ -195,28 +211,11 @@ li {
   animation: pop2 0.4s ease-in-out 2 alternate;
 }
 
-.backspace {
-  background: rgb(218, 75, 75);
-}
-
-.next li:nth-child(1) button {
-  color: white;
-}
-
-.clear {
-  background: rgb(218, 75, 75);
-}
-
-.org {
-  color: rgb(218, 75, 75);
-}
-
 @keyframes pop {
   0% {
     background: transparent;
     border-radius: 100%;
   }
-
   100% {
     background: rgba(77, 78, 80, 0.5);
     border-radius: 70%;
@@ -228,7 +227,6 @@ li {
     background: transparent;
     border-radius: 100%;
   }
-
   100% {
     background: rgba(151, 158, 170, 0.5);
     border-radius: 70%;

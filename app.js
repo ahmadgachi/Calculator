@@ -100,6 +100,7 @@ const calculate = function () {
     const numbers = document.querySelectorAll(".numbers li button");
     const operators = document.querySelectorAll(".operators li button");
     const topDeg = document.querySelector(".deg");
+    const next = document.querySelectorAll(".next li button");
 
     numbers.forEach((number) => {
       number.addEventListener("click", () => {
@@ -108,6 +109,15 @@ const calculate = function () {
           number.classList.remove("animate-pop");
         }, 600);
         return insert(number.textContent);
+      });
+    });
+
+    next.forEach((n) => {
+      n.addEventListener("click", () => {
+        n.classList.add("animate-pop");
+        setTimeout(() => {
+          n.classList.remove("animate-pop");
+        }, 600);
       });
     });
 
@@ -183,7 +193,7 @@ const calculate = function () {
 
   eqaulTo.addEventListener("click", equal);
   document.addEventListener("keypress", (e) => {
-    if (e.keyCode === 13) {
+    if (e.key === 13) {
       e.preventDefault();
       equal();
     } else {

@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import "config";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  place-content: center;
+  height: 100vh;
+  width: 100%;
+
+  .container {
+    max-width: 350px;
+    border-radius: 3px;
+    max-height: 630px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1.5fr;
+    background: $container-color;
+    font-family: $font-stack;
+    position: relative;
+
+    .deg {
+      position: absolute;
+      top: 2%;
+      left: 3%;
+      font-size: 12px;
+      color: #999fa5;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .work-area {
+      grid-row: 1/2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      .cal {
+        width: 100%;
+        height: 70%;
+        padding: 30px;
+        text-align: end;
+        font-size: 35px;
+        border: none;
+        background: transparent;
+        caret-color: #7ea3df;
+        color: $white;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .answer {
+        width: 100%;
+        height: 30%;
+        padding: 5px;
+        text-align: end;
+        font-size: 25px;
+        padding-right: 30px;
+        color: $white;
+      }
+    }
+
+    .signs {
+      grid-row: 2/3;
+      display: flex;
+      flex-wrap: wrap;
+      background: #174ea6;
+
+      li {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+
+        &:first-child {
+          background-color: $red;
+        }
+
+        button {
+          background: transparent;
+          color: white;
+          border: none;
+          height: 50px;
+          width: 50px;
+          cursor: pointer;
+          font-size: 20px;
+          height: 100%;
+          width: 100%;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+
+    .main {
+      grid-row: 3/4;
+      display: grid;
+      grid-template-columns: 2fr 0.5fr 0.5fr;
+
+      .numbers {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+          width: 33.33%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          button {
+            color: white;
+            font-size: 25px;
+            border: none;
+            border-radius: 100%;
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .operators {
+        display: flex;
+        flex-direction: column;
+
+        li {
+          height: 25%;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          button {
+            font-size: 25px;
+            color: #6f8fc2;
+            border: none;
+            border-radius: 100%;
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .next {
+        display: flex;
+        flex-direction: column;
+
+        li {
+          height: 25%;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &:first-child {
+            button {
+              color: $white;
+              background: $red;
+            }
+          }
+
+          button {
+            font-size: 25px;
+            color: #6f8fc2;
+            border: none;
+            border-radius: 100%;
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .signs,
+    .operators,
+    .numbers,
+    .next {
+      li {
+        button {
+          outline: none;
+        }
+      }
+    }
+
+    .blank {
+      pointer-events: none;
+    }
+  }
+
+  .org {
+    color: $red;
+  }
+
+  .backspace {
+    background: rgb(218, 75, 75);
+  }
+}
+
+@import "animations";
+
+@import "mobile";

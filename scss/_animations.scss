@@ -1,0 +1,31 @@
+.animate-pop {
+  animation: pop 0.4s ease-in-out 2 alternate;
+}
+
+.animate-pop2 {
+  animation: pop2 0.4s ease-in-out 2 alternate;
+}
+
+@keyframes pop {
+  0% {
+    background: transparent;
+    border-radius: 100%;
+  }
+
+  100% {
+    background: rgba(77, 78, 80, 0.5);
+    border-radius: 70%;
+  }
+}
+
+@keyframes pop2 {
+  0% {
+    background: transparent;
+    border-radius: 100%;
+  }
+
+  100% {
+    background: rgba(151, 158, 170, 0.5);
+    border-radius: 70%;
+  }
+}
